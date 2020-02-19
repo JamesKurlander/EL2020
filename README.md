@@ -6,13 +6,13 @@ This repository documents my classwork and projects done for CPS342.
 
   1. **Personal Information:**  
     
-  Name: James Kurlander  
+    Name: James Kurlander  
     
-  Major: Computer Engineering  
+    Major: Computer Engineering  
     
-  ID: [N03371595](https://github.com/JamesKurlander)  
+    ID: [N03371595](https://github.com/JamesKurlander)  
     
-  Year: Senior  
+    Year: Senior  
     
   2. **Class Start Date:** Jan 22, 2020  
     
