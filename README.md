@@ -6,7 +6,7 @@ This repository documents my classwork and projects done for CPS342.
 
 1. **Personal Information:**  
     
-  Name: James Kurlander  
+    Name: James Kurlander  
     
   Major: Computer Engineering  
     
