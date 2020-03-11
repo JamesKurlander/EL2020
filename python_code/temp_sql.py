@@ -4,7 +4,6 @@ import time
 import Adafruit_DHT
 import os
 import sqlite3 as sql
-import
 
 #Initialize the GPIO
 #GPIO.setmode(GPIO.BCM)
