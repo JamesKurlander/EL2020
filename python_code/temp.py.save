@@ -1,0 +1,15 @@
+#Imports the Rpi.GPIO library and renames it to GPIO
+#This it simply done to make things easier when calling the library
+import Rpi.GPIO as GPIO
+#Imports the Adafruit_DHT library and renames it to DHT
+import Adafruit_DHT as DHT
+
+while True:
+	temp, hum = [DHT.read_retry(DHT, DHT11, 17)]
+	temp = temp * 9/5.0 + 32
+
+	if hum is not None and temp is not None:
+		tempFahr = '{0:0.1f}*F'.format(temp)
+		print('Temperature = {0:0.1f}*F Humidity = {1:0.1f}%'.format(temp, hum)
+	else:
+		print('Something is broken, moron...')
