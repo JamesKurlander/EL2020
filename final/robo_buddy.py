@@ -14,8 +14,6 @@ import picamera
 PIR_pin = 4
 eFROM = "james.h.kurlander@gmail.com"
 eTO = "james.h.kurlander@gmail.com"
-Subject = "Intruder Alert!"
-Text = "An intruder has been spotted! Go check it out!"
 server = smtplib.SMTP('smtp.gmail.com', 587)
 
 GPIO.setmode(GPIO.BCM)
@@ -27,7 +25,7 @@ def detect():
 		if GPIO.input(PIR_pin):
 			print("Entity detected!")
 			from subprocess import call
-			call(["aplay", "/home/james/EL2020/final/audio_files/actions_have_consequences.wav"])
+			call(["aplay", "/home/james/EL2020/final/audio_files/we_got_em.wav"])
 			capture()
 			time.sleep(60)
 		else:
@@ -51,7 +49,7 @@ def alert(img_file):
 	msg['From'] = eFROM
 	msg['To'] = eTO
 
-	text = MIMEText("Here's a photo of the perpetrator! Go check it out!")
+	text = MIMEText("Here's a photo of the perpetrator! Go check it out! Here's a livestream of the action: http://192.168.1.204:2020/")
 	msg.attach(text)
 	image = MIMEImage(img_data, name=os.path.basename(img_file))
 	msg.attach(image)
