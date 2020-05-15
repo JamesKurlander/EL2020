@@ -24,10 +24,10 @@ Step 1. Hardware Setup:
   Settings up the hardware for this project was fairly easy. It only makes use of 2 of the sensors included in the kit (PIR motion and touch). These sensors operate pretty easily in that they simply need to be wired to VCC, GND, and a signal. The PIR sensor used GPIO4 for signal and the touch sensor used GPIO12 for signal. Additionally, a Raspberry Pi camera module V2 was used to capture images along with a USB speaker for playing audio. The camera was plugged into its dedicated port on the Pi and the speaker was plugged into one of the 4 USB slots on the Pi.
 
 Step 2. Writing the robo_buddy.py file:
-  This file makes use of some GPIO, the USB speaker, and the standard Raspberry Pi camera module V2 through the use of the RPI.GPIO and picamera Python libraries. The program is comprised of the following functions:
+  This file makes use of some GPIO, the USB speaker, and the standard Raspberry Pi camera module V2 through the use of the RPI.GPIO and picamera Python libraries. At the top we decalre a few varialbes such as the emails to send/receive the alert and pin assignments. The program is comprised of the following functions:
 
   - detect() - runs idefinitely, checking the PIR sensor for any movement, as well as the touch sensor to see if the owner has disarmed the system. If an intruder is detected, the program plays an audio file to alert them that they've been caught and calls the capture() function. If the owner disarms the system, the program immediately ends.
-  - capture() - takes a snapshot of the intruder and sends it to the alert function.
+  - capture() - initializes a camera, sets the resolution, begins a preview (turns it on), waits 2 seconds (for the camera to gain focus) , then takes a snapshot of the intruder and passes it to the alert function.
   - alert() - composes an email to send to the owner containing an image of the intruder along with a link to a livestream from the robot's camera.
   
 Step 3. Getting audio to work:
