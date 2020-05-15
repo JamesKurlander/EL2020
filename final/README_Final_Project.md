@@ -21,7 +21,7 @@ WALKTHROUGH: Below is a more in depth walkthrough on how to complete this projec
   - alert() - composes an email to send to the owner containing an image of the intruder along with a link to a livestream from the robot's camera.
   
 2. Getting audio to work:
-  In audio to get audio working on the Pi, I used the alsamixer program (which was native to my Pi). The USB speaker had to be selected as the default audio device in the .conf file for ALSA, but once that was done, it was pretty much plug and play.
+  To get audio working on the Pi, I used the alsamixer program (which was native to my Pi). The USB speaker had to be selected as the default audio device in the .conf file for ALSA, but once that was done, it was pretty much plug and play.
 
 3. Setting up the webserver:
   Next came setting up the Flask server. This was heavily based off of the code we had written for our midterm project. The only difference was that the webpage is now being used to simply host a live video feed and an array of buttons to play sounds from the robot. The video feed works by sending a constant stream of images to the stream (@app.route'/video_feed'). The camera object is created by/imported from the stream.py file. This file contains functions to initialize the camera and actualyl snap an image. This calls "gen(camera)" which essentially just takes an image and sends it back. This process is called Motion JPEG. It's not the best quality, but it's low latency and is similar to what's used in CCTV security cameras.
