@@ -25,3 +25,6 @@ WALKTHROUGH: Below is a more in depth walkthrough on how to complete this projec
 
 3. Setting up the webserver:
   Next came setting up the Flask server. This was heavily based off of the code we had written for our midterm project. The only difference was that the webpage is now being used to simply host a live video feed and an array of buttons to play sounds from the robot. The video feed works by sending a constant stream of images to the stream (@app.route'/video_feed'). The camera object is created by/imported from the stream.py file. This file contains functions to initialize the camera and actualyl snap an image. This calls "gen(camera)" which essentially just takes an image and sends it back. This process is called Motion JPEG. It's not the best quality, but it's low latency and is similar to what's used in CCTV security cameras.
+  
+4. Designing the webpage:
+  The webpage's design lies in the /templates/index.html file. This file is pretty simple. It declares a space for the video to be embedded along with an array of buttons (very similar to the one used in the midterm). The styling is defined in the /templates/style.css file.
