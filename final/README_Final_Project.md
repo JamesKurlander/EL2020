@@ -28,3 +28,6 @@ WALKTHROUGH: Below is a more in depth walkthrough on how to complete this projec
   
 4. Designing the webpage:
   The webpage's design lies in the /templates/index.html file. This file is pretty simple. It declares a space for the video to be embedded along with an array of buttons (very similar to the one used in the midterm). The styling is defined in the /templates/style.css file.
+  
+5. Hardware Setup:
+  Settings up the hardware for this project was fairly easy. It only makes use of 2 of the sensors included in the kit (PIR motion and touch). These sensors operate pretty easily in that they simply need to be wired to VCC, GND, and a signal. The PIR sensor used GPIO4 and the touch sensor used GPIO12. Additionally, a Raspberry Pi camera module V2 was used to capture images along with a USB speaker. The camera was plugged into its dedicated port on the Pi and the speaker was plugged into one of the 4 USB slots on the Pi.
