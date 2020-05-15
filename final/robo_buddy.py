@@ -12,12 +12,14 @@ from email.mime.multipart import MIMEMultipart
 import picamera
 
 PIR_pin = 4
+touch_pin = 12
 eFROM = "james.h.kurlander@gmail.com"
 eTO = "james.h.kurlander@gmail.com"
 server = smtplib.SMTP('smtp.gmail.com', 587)
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(PIR_pin, GPIO.IN)
+GPIO.setup(touch_pin, GPIO.IN)
 
 #runs indefinitely, checking the area for any movement
 def detect():
@@ -27,10 +29,13 @@ def detect():
 			from subprocess import call
 			call(["aplay", "/home/james/EL2020/final/audio_files/we_got_em.wav"])
 			capture()
-			time.sleep(60)
+			time.sleep(1000)
+		elif GPIO.input(touch_pin):
+			print("SYSTEM DISARMED")
+			exit()
 		else:
 			print("Nothing detected...")
-		time.sleep(2)
+		time.sleep(1)
 
 #captures an image of the intruder when called
 def capture():

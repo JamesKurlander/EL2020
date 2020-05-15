@@ -2,9 +2,59 @@
   <head>
     <title>RoboBuddy Livestream</title>
     <link rel="stylesheet" href='style.css'/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   </head>
   <body>
+    <input id="button1" type="button" onclick="button1_click()" value="Gahdeem!" />
+    <input id="button2" type="button" onclick="button2_click()" value="Actions Have Consequences!" />
+    <input id="button3" type="button" onclick="button3_click()" value="It's Time to Stop!" />
+    <input id="button4" type="button" onclick="button4_click()" value="Elevator Music" />
+    <input id="button5" type="button" onclick="button5_click()" value="Homer Simpson Lesson" />
+    <input id="button6" type="button" onclick="button6_click()" value="It Was at This Moment..." />
+    <input id="button7" type="button" onclick="button7_click()" value="Ready to Rumble" />
+
     <h1>RoboBuddy Livestream</h1>
     <h3><img src="{{ url_for('video_feed') }}" width="90%"></h3>
+
+    <script type='text/javascript'>
+      function button1_click()
+      {
+        $.ajax({type:'get', url:'/button1', cache:false, async:'asynchronus'});
+      };
+
+      function button2_click()
+      {
+        $.ajax({type:'get', url:'/button2', cache:false, async:'asynchronus'});
+      };
+
+      function button3_click()
+      {
+        $.ajax({type:'get', url:'/button3', cache:false, async:'asynchronus'});
+      };
+
+      function button4_click()
+      {
+        $.ajax({type:'get', url:'/button4', cache:false, async:'asynchronus'});
+      };
+
+      function button5_click()
+      {
+        $.ajax({type:'get', url:'/button5', cache:false, async:'asynchronus'});
+      };
+
+      function button6_click()
+      {
+        $.ajax({type:'get', url:'/button6', cache:false, async:'asynchronus'});
+      };
+
+      function button7_click()
+      {
+        $.ajax({type:'get', url:'/button7', cache:false, async:'asynchronus'});
+      };
+    </script>
   </body>
 </html>
